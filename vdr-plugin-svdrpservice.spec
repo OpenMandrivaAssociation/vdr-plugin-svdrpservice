@@ -2,7 +2,7 @@
 %define plugin	svdrpservice
 %define name	vdr-plugin-%plugin
 %define version	0.0.3
-%define rel	1
+%define rel	2
 
 Summary:	VDR plugin: SVDRP client
 Name:		%name
@@ -24,6 +24,15 @@ multiple connections at a time.
 
 There's no reason to load this plugin if no other plugin relies on it.
 
+%package -n %plugin-devel
+Summary:	Development headers for svdrpservice VDR plugin
+Group:		Development/C++
+Requires:	vdr-devel
+
+%description -n %plugin-devel
+Development headers for svdrpservice VDR plugin needed for building
+some plugins depending on svdrpservice.
+
 %prep
 %setup -q -n %plugin-%version
 
@@ -33,6 +42,8 @@ There's no reason to load this plugin if no other plugin relies on it.
 %install
 rm -rf %{buildroot}
 %vdr_plugin_install
+
+install -D -m644 svdrpservice.h %buildroot%_includedir/vdr/%plugin/svdrpservice.h
 
 %clean
 rm -rf %{buildroot}
@@ -46,3 +57,7 @@ rm -rf %{buildroot}
 %files -f %plugin.vdr
 %defattr(-,root,root)
 %doc README HISTORY
+
+%files -n %plugin-devel
+%defattr(-,root,root)
+%{_includedir}/vdr/%{plugin}
