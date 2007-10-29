@@ -2,7 +2,7 @@
 %define plugin	svdrpservice
 %define name	vdr-plugin-%plugin
 %define version	0.0.3
-%define rel	5
+%define rel	6
 
 Summary:	VDR plugin: SVDRP client
 Name:		%name
