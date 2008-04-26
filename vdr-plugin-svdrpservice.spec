@@ -2,7 +2,7 @@
 %define plugin	svdrpservice
 %define name	vdr-plugin-%plugin
 %define version	0.0.3
-%define rel	7
+%define rel	8
 
 Summary:	VDR plugin: SVDRP client
 Name:		%name
@@ -12,8 +12,9 @@ Group:		Video
 License:	GPL
 URL:		http://vdr.schmirler.de/
 Source:		http://vdr.schmirler.de/svdrpservice/vdr-%plugin-%version.tar.bz2
+Patch0:		svdrpservice-0.0.3-i18n-1.6.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	vdr-devel >= 1.4.1-6
+BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
 
 %description
@@ -35,6 +36,8 @@ some plugins depending on svdrpservice.
 
 %prep
 %setup -q -n %plugin-%version
+%patch0 -p1
+%vdr_plugin_prep
 
 %build
 %vdr_plugin_build
