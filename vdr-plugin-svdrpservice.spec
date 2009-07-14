@@ -1,18 +1,17 @@
 
 %define plugin	svdrpservice
 %define name	vdr-plugin-%plugin
-%define version	0.0.3
-%define rel	10
+%define version	0.0.4
+%define rel	1
 
 Summary:	VDR plugin: SVDRP client
 Name:		%name
 Version:	%version
 Release:	%mkrel %rel
 Group:		Video
-License:	GPL
+License:	GPL+
 URL:		http://vdr.schmirler.de/
-Source:		http://vdr.schmirler.de/svdrpservice/vdr-%plugin-%version.tar.bz2
-Patch0:		svdrpservice-0.0.3-i18n-1.6.patch
+Source:		http://vdr.schmirler.de/svdrpservice/vdr-%plugin-%version.tgz
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
@@ -36,8 +35,14 @@ some plugins depending on svdrpservice.
 
 %prep
 %setup -q -n %plugin-%version
-%patch0 -p1
 %vdr_plugin_prep
+
+%vdr_plugin_params_begin %plugin
+# Default server IP and optional port (e.g. 192.168.0.1:2001).
+# If no port is given, the default SVDRP port 2001 is assumed.
+var=DEFAULT_SERVER
+param=DEFAULT_SERVER
+%vdr_plugin_params_end
 
 %build
 %vdr_plugin_build
