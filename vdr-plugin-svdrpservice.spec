@@ -69,3 +69,65 @@ rm -rf %{buildroot}
 %files -n %plugin-devel
 %defattr(-,root,root)
 %{_includedir}/vdr/%{plugin}
+
+
+%changelog
+* Tue Jul 28 2009 Anssi Hannula <anssi@mandriva.org> 0.0.4-2mdv2010.0
++ Revision: 401088
+- rebuild for new VDR
+
+* Tue Jul 14 2009 Anssi Hannula <anssi@mandriva.org> 0.0.4-1mdv2010.0
++ Revision: 395761
+- new version
+- drop i18n patch, fixed upstream
+- update license tag
+- include sysconfig file
+
+* Fri Mar 20 2009 Anssi Hannula <anssi@mandriva.org> 0.0.3-10mdv2009.1
++ Revision: 359372
+- rebuild for new vdr
+
+* Mon Apr 28 2008 Anssi Hannula <anssi@mandriva.org> 0.0.3-9mdv2009.0
++ Revision: 197984
+- rebuild for new vdr
+
+* Sat Apr 26 2008 Anssi Hannula <anssi@mandriva.org> 0.0.3-8mdv2009.0
++ Revision: 197729
+- add vdr_plugin_prep
+- bump buildrequires on vdr-devel
+- adapt to gettext i18n of VDR 1.6 (semi-automatic patch)
+
+* Fri Jan 04 2008 Anssi Hannula <anssi@mandriva.org> 0.0.3-7mdv2008.1
++ Revision: 145209
+- rebuild for new vdr
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Mon Oct 29 2007 Anssi Hannula <anssi@mandriva.org> 0.0.3-6mdv2008.1
++ Revision: 103219
+- rebuild for new vdr
+
+* Sun Jul 08 2007 Anssi Hannula <anssi@mandriva.org> 0.0.3-5mdv2008.0
++ Revision: 50053
+- rebuild for new vdr
+
+* Thu Jun 21 2007 Anssi Hannula <anssi@mandriva.org> 0.0.3-4mdv2008.0
++ Revision: 42136
+- rebuild for new vdr
+
+* Sat May 05 2007 Anssi Hannula <anssi@mandriva.org> 0.0.3-3mdv2008.0
++ Revision: 22705
+- rebuild for new vdr
+
+* Tue May 01 2007 Anssi Hannula <anssi@mandriva.org> 0.0.3-2mdv2008.0
++ Revision: 19887
+- add devel subpackage
+
+* Tue May 01 2007 Anssi Hannula <anssi@mandriva.org> 0.0.3-1mdv2008.0
++ Revision: 19882
+- Import vdr-plugin-svdrpservice
+
