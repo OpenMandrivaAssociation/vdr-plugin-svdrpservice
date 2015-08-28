@@ -3,7 +3,7 @@
 Summary:	VDR plugin: SVDRP client
 Name:		vdr-plugin-%plugin
 Version:	0.0.4
-Release:	4
+Release:	5
 Group:		Video
 License:	GPL+
 URL:		http://vdr.schmirler.de/
