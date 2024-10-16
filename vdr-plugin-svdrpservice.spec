@@ -6,7 +6,7 @@ Version:	0.0.4
 Release:	5
 Group:		Video
 License:	GPL+
-URL:		http://vdr.schmirler.de/
+URL:		https://vdr.schmirler.de/
 Source:		http://vdr.schmirler.de/svdrpservice/vdr-%plugin-%{version}.tgz
 BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
